@@ -88,15 +88,9 @@ public class LinkList {
 
     @Override
     public String toString() {
-        if (first == null) {
-            return "[]";
-        }
-        if (first == last) {
-            return "[" + first.item + "]";
-        }
         StringBuilder sb = new StringBuilder("[");
         Node temp = first;
-        while (true) {
+        while (first != null) {
             sb.append(temp.item);
             if (temp.next == null) {
                 return sb.append(']').toString();
@@ -104,6 +98,7 @@ public class LinkList {
             sb.append(',');
             temp = temp.next;
         }
+        return sb.append(']').toString();
     }
 
     private static class Node {
