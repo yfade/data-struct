@@ -1,4 +1,4 @@
-package com.book.datastructure.sequencelist;
+package com.book.sequencelist;
 
 import java.util.Arrays;
 

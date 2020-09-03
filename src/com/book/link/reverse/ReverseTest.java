@@ -1,4 +1,4 @@
-package com.book.datastructure.link.reverse;
+package com.book.link.reverse;
 
 public class ReverseTest {
     public static void main(String[] args) {
