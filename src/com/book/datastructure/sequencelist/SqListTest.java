@@ -1,4 +1,4 @@
-package com.datastruct.sequencelist;
+package com.book.datastructure.sequencelist;
 
 public class SqListTest {
     public static void main(String[] args) {

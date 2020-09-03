@@ -1,4 +1,4 @@
-package com.datastruct.link;
+package com.book.datastructure.link;
 
 public class LinkList {
     private int size;

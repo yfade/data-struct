@@ -1,4 +1,4 @@
-package com.datastruct.link;
+package com.book.datastructure.link;
 
 public class LinkListTest {
     public static void main(String[] args) {
