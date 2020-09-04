@@ -41,6 +41,28 @@ public class Link {
         first = mid;
     }
 
+    /**
+     * 递归反转
+     */
+    public void recursionReverse() {
+        first = recursionReverse(first);
+    }
+
+    public Node recursionReverse(Node head) {
+        //递归出口
+        if (head == null || head.next == null) {
+            return head;
+        }
+        //一直递归，找到最后一个结点
+        Node lastNode = recursionReverse(head.next);
+
+        //lastNode始终指向原链表中最后一个结点，head的下一个结点指向head，head指向NULL
+        head.next.next = head;
+        head.next = null;
+
+        return lastNode;
+    }
+
     @Override
     public String toString() {
         Node temp = first;
