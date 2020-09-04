@@ -17,5 +17,9 @@ public class ReverseTest {
         System.out.println("递归反转：");
         link.recursionReverse();
         System.out.println(link);
+
+        System.out.println("头插法反转：");
+        link.topInsertReverse();
+        System.out.println(link);
     }
 }

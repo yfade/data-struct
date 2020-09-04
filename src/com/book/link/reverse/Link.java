@@ -48,7 +48,7 @@ public class Link {
         first = recursionReverse(first);
     }
 
-    public Node recursionReverse(Node head) {
+    private Node recursionReverse(Node head) {
         //递归出口
         if (head == null || head.next == null) {
             return head;
@@ -61,6 +61,26 @@ public class Link {
         head.next = null;
 
         return lastNode;
+    }
+
+    public void topInsertReverse() {
+        if (first == null || first.next == null) {
+            return;
+        }
+
+        Node head = null;
+        Node top;
+        while (first != null) {
+            //保存原链表当前头节点
+            top = first;
+            //摘除原链表头节点
+            first = first.next;
+
+            //将top插入新链表头部
+            top.next = head;
+            head = top;
+        }
+        first = head;
     }
 
     @Override
