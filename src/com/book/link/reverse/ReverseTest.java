@@ -21,5 +21,9 @@ public class ReverseTest {
         System.out.println("头插法反转：");
         link.topInsertReverse();
         System.out.println(link);
+
+        System.out.println("就地逆置法：");
+        link.localReverse();
+        System.out.println(link);
     }
 }

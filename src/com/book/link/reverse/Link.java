@@ -1,5 +1,7 @@
 package com.book.link.reverse;
 
+import jdk.nashorn.internal.objects.annotations.Where;
+
 public class Link {
     private Node first;
     private int size;
@@ -63,6 +65,9 @@ public class Link {
         return lastNode;
     }
 
+    /**
+     * 头插法反转
+     */
     public void topInsertReverse() {
         if (first == null || first.next == null) {
             return;
@@ -81,6 +86,24 @@ public class Link {
             head = top;
         }
         first = head;
+    }
+
+    /**
+     * 就地逆置法
+     */
+    public void localReverse() {
+        if (first == null || first.next == null) {
+            return;
+        }
+        Node beg = first;
+        Node end = first.next;
+
+        while (end != null) {
+            beg.next = end.next;
+            end.next = first;
+            first = end;
+            end = beg.next;
+        }
     }
 
     @Override
