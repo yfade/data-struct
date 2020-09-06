@@ -1,5 +1,7 @@
 package com.book.link.reverse;
 
+import com.book.link.Link;
+
 public class ReverseTest {
     public static void main(String[] args) {
         Link link = new Link();

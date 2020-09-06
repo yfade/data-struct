@@ -1,6 +1,4 @@
-package com.book.link.reverse;
-
-import jdk.nashorn.internal.objects.annotations.Where;
+package com.book.link;
 
 public class Link {
     private Node first;
