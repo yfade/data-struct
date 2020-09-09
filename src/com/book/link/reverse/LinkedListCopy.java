@@ -1,6 +1,6 @@
 package com.book.link.reverse;
 
-public class LinkedList<E> {
+public class LinkedListCopy<E> {
 
     private class Node {
         public E e;
@@ -28,7 +28,7 @@ public class LinkedList<E> {
     private Node dummyHead;
     private int size;
 
-    public LinkedList() {
+    public LinkedListCopy() {
         dummyHead = new Node();
         size = 0;
     }
