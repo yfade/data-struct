@@ -1,6 +1,6 @@
-package com.book.link;
+package com.book.link.circle;
 
-public class CycleLinkDemo {
+public class CircleLinkDemo {
     public static void main(String[] args) {
         CycleLink cycleLink = new CycleLink();
         cycleLink.initLink();
