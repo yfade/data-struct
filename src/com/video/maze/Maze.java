@@ -1,7 +1,5 @@
 package com.video.maze;
 
-import java.lang.reflect.MalformedParameterizedTypeException;
-
 public class Maze {
     public static void main(String[] args) {
         int[][] map = initMap(8, 7);
