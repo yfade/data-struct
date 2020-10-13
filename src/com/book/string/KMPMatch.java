@@ -5,8 +5,9 @@ import java.util.Arrays;
 public class KMPMatch {
     public static void main(String[] args) {
 //        char[] T = "abaabcac".toCharArray();
-        char[] T = new char[]{'a', 'a', 'a', 'c', 'd'};
-//        char[] T = new char[]{'a', 'b', 'c', 'a', 'e'};
+//        char[] T = new char[]{'a', 'a', 'a', 'c', 'd'};
+        char[] T = new char[]{'a', 'b', 'c', 'a', 'e'};
+//        char[] T = new char[]{'a', 'a', 'a', 'a', 'a', 'a', 'a', 'b'};
         int[] next = new int[T.length];
         next[0] = -1;
         next[1] = 0;
@@ -16,7 +17,11 @@ public class KMPMatch {
             if (j == -1 || T[i] == T[j]) {
                 i++;
                 j++;
-                next[i] = j;
+                if (T[i] != T[j]) {
+                    next[i] = j;
+                } else {
+                    next[i] = next[j];
+                }
             } else {
                 j = next[j];
             }
