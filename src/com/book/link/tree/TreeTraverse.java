@@ -1,7 +1,7 @@
 package com.book.link.tree;
 
-import sun.reflect.generics.tree.Tree;
-
+import java.util.ArrayDeque;
+import java.util.Queue;
 import java.util.Stack;
 
 public class TreeTraverse {
@@ -28,6 +28,10 @@ public class TreeTraverse {
 
         System.out.println("后续遍历：");
         afterTraverse(treeNode1);
+        System.out.println();
+
+        System.out.println("层次遍历");
+        levelTraverse(treeNode1);
         System.out.println();
     }
 
@@ -80,26 +84,6 @@ public class TreeTraverse {
     }
 
     /**
-     * 中序遍历-非递归
-     *
-     * @param treeNode
-     */
-    private static void midTraverseStack(TreeNode treeNode) {
-        Stack<TreeNode> stack = new Stack<>();
-        stack.push(treeNode);
-        while (!stack.isEmpty()) {
-            TreeNode pop = stack.pop();
-            while (pop != null) {
-                if (pop.rc != null) {
-                    stack.push(pop.rc);
-                }
-                pop = pop.lc;
-            }
-
-        }
-    }
-
-    /**
      * 后续遍历
      *
      * @param treeNode
@@ -111,6 +95,26 @@ public class TreeTraverse {
         afterTraverse(treeNode.lc);
         afterTraverse(treeNode.rc);
         displayTreeNode(treeNode);
+    }
+
+    /**
+     * 层次遍历
+     *
+     * @param treeNode
+     */
+    private static void levelTraverse(TreeNode treeNode) {
+        Queue<TreeNode> queue = new ArrayDeque<>();
+        queue.add(treeNode);
+        while (!queue.isEmpty()) {
+            TreeNode node = queue.poll();
+            displayTreeNode(node);
+            if (node.lc != null) {
+                queue.add(node.lc);
+            }
+            if (node.rc != null) {
+                queue.add(node.rc);
+            }
+        }
     }
 
     private static void displayTreeNode(TreeNode treeNode) {
